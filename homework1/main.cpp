@@ -10,7 +10,7 @@ int main()
 	f = 1;
 	while (i <= n)
 	{
-		f = f + i;
+		f = f * i;
 		i = i + 1;
 	}
 	cout << f << endl;
