@@ -3,7 +3,7 @@
 	#define Begin 1
 #endif // !Begin
 
-#define mux(x,y) x*y
+#define mux(x,y) x * y
 
 using namespace std;
 
