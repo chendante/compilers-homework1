@@ -1,4 +1,10 @@
 #include<iostream>
+#ifndef Begin
+	#define Begin 1
+#endif // !Begin
+
+#define mux(x,y) x * y
+
 using namespace std;
 
 int main()
@@ -7,10 +13,10 @@ int main()
 
 	cin >> n;
 	i = 2;
-	f = 1;
+	f = Begin;
 	while (i <= n)
 	{
-		f = f * i;
+		f = mux(f,i);
 		i = i + 1;
 	}
 	cout << f << endl;
