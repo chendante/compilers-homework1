@@ -52043,6 +52043,12 @@ private:
 
 
 #line 2 "d:\\codes\\vc++\\compilers\\homework1\\homework1\\main.cpp"
+
+	
+#line 5 "d:\\codes\\vc++\\compilers\\homework1\\homework1\\main.cpp"
+
+
+
 using namespace std;
 
 int main()
@@ -52054,7 +52060,7 @@ int main()
 	f = 1;
 	while (i <= n)
 	{
-		f = f + i;
+		f = f*i;
 		i = i + 1;
 	}
 	cout << f << endl;
