@@ -52047,7 +52047,10 @@ private:
 	
 #line 5 "d:\\codes\\vc++\\compilers\\homework1\\homework1\\main.cpp"
 
-
+inline int mux(int x, int y)
+{
+	return x*y;
+}
 
 using namespace std;
 
@@ -52060,7 +52063,7 @@ int main()
 	f = 1;
 	while (i <= n)
 	{
-		f = f * i;
+		f = mux(f,i);
 		i = i + 1;
 	}
 	cout << f << endl;

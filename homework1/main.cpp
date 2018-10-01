@@ -3,7 +3,10 @@
 	#define Begin 1
 #endif // !Begin
 
-#define mux(x,y) x * y
+inline int mux(int x, int y)
+{
+	return x*y;
+}
 
 using namespace std;
 
