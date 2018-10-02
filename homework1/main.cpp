@@ -1,13 +1,5 @@
+
 #include<iostream>
-#ifndef Begin
-	#define Begin 1
-#endif // !Begin
-
-inline int mux(int x, int y)
-{
-	return x*y;
-}
-
 using namespace std;
 
 int main()
@@ -16,10 +8,10 @@ int main()
 
 	cin >> n;
 	i = 2;
-	f = Begin;
+	f = 1;
 	while (i <= n)
 	{
-		f = mux(f,i);
+		f = f * i;
 		i = i + 1;
 	}
 	cout << f << endl;
