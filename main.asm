@@ -125,22 +125,6 @@ _main	PROC						; COMDAT
 	mov	DWORD PTR _i$[ebp], 2
 ; Line 11
 	mov	DWORD PTR _f$[ebp], 1
-$LN2@main:
-; Line 12
-	mov	eax, DWORD PTR _i$[ebp]
-	cmp	eax, DWORD PTR _n$[ebp]
-	jg	SHORT $LN3@main
-; Line 14
-	mov	eax, DWORD PTR _f$[ebp]
-	imul	eax, DWORD PTR _i$[ebp]
-	mov	DWORD PTR _f$[ebp], eax
-; Line 15
-	mov	eax, DWORD PTR _i$[ebp]
-	add	eax, 1
-	mov	DWORD PTR _i$[ebp], eax
-; Line 16
-	jmp	SHORT $LN2@main
-$LN3@main:
 ; Line 17
 	mov	esi, esp
 	push	OFFSET ??$endl@DU?$char_traits@D@std@@@std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@0@AAV10@@Z ; std::endl<char,std::char_traits<char> >
@@ -160,7 +144,7 @@ $LN3@main:
 	push	edx
 	mov	ecx, ebp
 	push	eax
-	lea	edx, DWORD PTR $LN7@main
+	lea	edx, DWORD PTR $LN5@main
 	call	@_RTC_CheckStackVars@8
 	pop	eax
 	pop	edx
@@ -176,14 +160,15 @@ $LN3@main:
 	mov	esp, ebp
 	pop	ebp
 	ret	0
-$LN7@main:
+	npad	1
+$LN5@main:
 	DD	1
-	DD	$LN6@main
-$LN6@main:
+	DD	$LN4@main
+$LN4@main:
 	DD	-24					; ffffffe8H
 	DD	4
-	DD	$LN5@main
-$LN5@main:
+	DD	$LN3@main
+$LN3@main:
 	DB	110					; 0000006eH
 	DB	0
 _main	ENDP
