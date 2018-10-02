@@ -23,7 +23,7 @@ EXTRN	@__security_check_cookie@4:PROC
 EXTRN	__imp_?cin@std@@3V?$basic_istream@DU?$char_traits@D@std@@@1@A:BYTE
 EXTRN	__imp_?cout@std@@3V?$basic_ostream@DU?$char_traits@D@std@@@1@A:BYTE
 EXTRN	___security_cookie:DWORD
-; Function compile flags: /Odtp /ZI
+; Function compile flags: /Ogtp
 ;	COMDAT ??$endl@DU?$char_traits@D@std@@@std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@0@AAV10@@Z
 _TEXT	SEGMENT
 __Ostr$ = 8						; size = 4
@@ -32,94 +32,72 @@ __Ostr$ = 8						; size = 4
 ; Line 980
 	push	ebp
 	mov	ebp, esp
-	sub	esp, 64					; 00000040H
-	push	ebx
 	push	esi
-	push	edi
 ; Line 981
+	mov	esi, DWORD PTR __Ostr$[ebp]
 	push	10					; 0000000aH
-	mov	eax, DWORD PTR __Ostr$[ebp]
-	mov	ecx, DWORD PTR [eax]
-	mov	edx, DWORD PTR __Ostr$[ebp]
-	add	edx, DWORD PTR [ecx+4]
-	mov	ecx, edx
+	mov	eax, DWORD PTR [esi]
+	mov	ecx, DWORD PTR [eax+4]
+	add	ecx, esi
 	call	DWORD PTR __imp_?widen@?$basic_ios@DU?$char_traits@D@std@@@std@@QBEDD@Z
-	movzx	eax, al
-	push	eax
-	mov	ecx, DWORD PTR __Ostr$[ebp]
+	movzx	ecx, al
+	push	ecx
+	mov	ecx, esi
 	call	DWORD PTR __imp_?put@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAEAAV12@D@Z
 ; Line 982
-	mov	ecx, DWORD PTR __Ostr$[ebp]
+	mov	ecx, esi
 	call	DWORD PTR __imp_?flush@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAEAAV12@XZ
 ; Line 983
-	mov	eax, DWORD PTR __Ostr$[ebp]
-; Line 984
-	pop	edi
+	mov	eax, esi
 	pop	esi
-	pop	ebx
-	mov	esp, ebp
+; Line 984
 	pop	ebp
 	ret	0
 ??$endl@DU?$char_traits@D@std@@@std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@0@AAV10@@Z ENDP ; std::endl<char,std::char_traits<char> >
 _TEXT	ENDS
-; Function compile flags: /Odtp /ZI
+; Function compile flags: /Ogtp
 ;	COMDAT _main
 _TEXT	SEGMENT
-_f$ = -16						; size = 4
-_n$ = -12						; size = 4
-_i$ = -8						; size = 4
+_n$ = -8						; size = 4
 __$ArrayPad$ = -4					; size = 4
 _main	PROC						; COMDAT
 ; File d:\codes\vc++\compilers\homework1\homework1\main.cpp
 ; Line 5
 	push	ebp
 	mov	ebp, esp
-	sub	esp, 80					; 00000050H
+	sub	esp, 8
 	mov	eax, DWORD PTR ___security_cookie
 	xor	eax, ebp
 	mov	DWORD PTR __$ArrayPad$[ebp], eax
-	push	ebx
-	push	esi
-	push	edi
 ; Line 8
+	mov	ecx, DWORD PTR __imp_?cin@std@@3V?$basic_istream@DU?$char_traits@D@std@@@1@A
 	lea	eax, DWORD PTR _n$[ebp]
 	push	eax
-	mov	ecx, DWORD PTR __imp_?cin@std@@3V?$basic_istream@DU?$char_traits@D@std@@@1@A
 	call	DWORD PTR __imp_??5?$basic_istream@DU?$char_traits@D@std@@@std@@QAEAAV01@AAH@Z
-; Line 9
-	mov	DWORD PTR _i$[ebp], 2
-; Line 10
-	mov	DWORD PTR _f$[ebp], 1
-$LN2@main:
 ; Line 11
-	mov	eax, DWORD PTR _i$[ebp]
-	cmp	eax, DWORD PTR _n$[ebp]
-	jg	SHORT $LN3@main
+	mov	edx, DWORD PTR _n$[ebp]
+	mov	ecx, 2
+	mov	eax, 1
+	cmp	edx, ecx
+	jl	SHORT $LN3@main
+$LL7@main:
 ; Line 13
-	mov	eax, DWORD PTR _f$[ebp]
-	imul	eax, DWORD PTR _i$[ebp]
-	mov	DWORD PTR _f$[ebp], eax
+	imul	eax, ecx
 ; Line 14
-	mov	eax, DWORD PTR _i$[ebp]
-	add	eax, 1
-	mov	DWORD PTR _i$[ebp], eax
-; Line 15
-	jmp	SHORT $LN2@main
+	inc	ecx
+	cmp	ecx, edx
+	jle	SHORT $LL7@main
 $LN3@main:
 ; Line 16
-	push	OFFSET ??$endl@DU?$char_traits@D@std@@@std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@0@AAV10@@Z ; std::endl<char,std::char_traits<char> >
-	mov	eax, DWORD PTR _f$[ebp]
-	push	eax
 	mov	ecx, DWORD PTR __imp_?cout@std@@3V?$basic_ostream@DU?$char_traits@D@std@@@1@A
+	push	OFFSET ??$endl@DU?$char_traits@D@std@@@std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@0@AAV10@@Z ; std::endl<char,std::char_traits<char> >
+	push	eax
 	call	DWORD PTR __imp_??6?$basic_ostream@DU?$char_traits@D@std@@@std@@QAEAAV01@H@Z
 	mov	ecx, eax
 	call	DWORD PTR __imp_??6?$basic_ostream@DU?$char_traits@D@std@@@std@@QAEAAV01@P6AAAV01@AAV01@@Z@Z
 ; Line 17
-	xor	eax, eax
-	pop	edi
-	pop	esi
-	pop	ebx
 	mov	ecx, DWORD PTR __$ArrayPad$[ebp]
+	xor	eax, eax
 	xor	ecx, ebp
 	call	@__security_check_cookie@4
 	mov	esp, ebp
@@ -127,7 +105,7 @@ $LN3@main:
 	ret	0
 _main	ENDP
 _TEXT	ENDS
-; Function compile flags: /Odtp /ZI
+; Function compile flags: /Ogtp
 ;	COMDAT ?__empty_global_delete@@YAXPAXI@Z
 _TEXT	SEGMENT
 ___formal$ = 8						; size = 4
@@ -135,38 +113,16 @@ ___formal$ = 12						; size = 4
 ?__empty_global_delete@@YAXPAXI@Z PROC			; __empty_global_delete, COMDAT
 ; File d:\codes\vc++\compilers\homework1\homework1\main.cpp
 ; Line 18
-	push	ebp
-	mov	ebp, esp
-	sub	esp, 64					; 00000040H
-	push	ebx
-	push	esi
-	push	edi
-	pop	edi
-	pop	esi
-	pop	ebx
-	mov	esp, ebp
-	pop	ebp
 	ret	0
 ?__empty_global_delete@@YAXPAXI@Z ENDP			; __empty_global_delete
 _TEXT	ENDS
-; Function compile flags: /Odtp /ZI
+; Function compile flags: /Ogtp
 ;	COMDAT ?__empty_global_delete@@YAXPAX@Z
 _TEXT	SEGMENT
 ___formal$ = 8						; size = 4
 ?__empty_global_delete@@YAXPAX@Z PROC			; __empty_global_delete, COMDAT
 ; File d:\codes\vc++\compilers\homework1\homework1\main.cpp
 ; Line 18
-	push	ebp
-	mov	ebp, esp
-	sub	esp, 64					; 00000040H
-	push	ebx
-	push	esi
-	push	edi
-	pop	edi
-	pop	esi
-	pop	ebx
-	mov	esp, ebp
-	pop	ebp
 	ret	0
 ?__empty_global_delete@@YAXPAX@Z ENDP			; __empty_global_delete
 _TEXT	ENDS
