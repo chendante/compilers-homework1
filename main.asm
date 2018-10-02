@@ -99,7 +99,7 @@ _i$ = -12						; size = 4
 __$ArrayPad$ = -4					; size = 4
 _main	PROC						; COMDAT
 ; File d:\codes\vc++\compilers\homework1\homework1\main.cpp
-; Line 6
+; Line 5
 	push	ebp
 	mov	ebp, esp
 	sub	esp, 232				; 000000e8H
@@ -113,7 +113,7 @@ _main	PROC						; COMDAT
 	mov	eax, DWORD PTR ___security_cookie
 	xor	eax, ebp
 	mov	DWORD PTR __$ArrayPad$[ebp], eax
-; Line 9
+; Line 8
 	mov	esi, esp
 	lea	eax, DWORD PTR _n$[ebp]
 	push	eax
@@ -121,11 +121,27 @@ _main	PROC						; COMDAT
 	call	DWORD PTR __imp_??5?$basic_istream@DU?$char_traits@D@std@@@std@@QAEAAV01@AAH@Z
 	cmp	esi, esp
 	call	__RTC_CheckEsp
-; Line 10
+; Line 9
 	mov	DWORD PTR _i$[ebp], 2
-; Line 11
+; Line 10
 	mov	DWORD PTR _f$[ebp], 1
-; Line 17
+$LN2@main:
+; Line 11
+	mov	eax, DWORD PTR _i$[ebp]
+	cmp	eax, DWORD PTR _n$[ebp]
+	jg	SHORT $LN3@main
+; Line 13
+	mov	eax, DWORD PTR _f$[ebp]
+	imul	eax, DWORD PTR _i$[ebp]
+	mov	DWORD PTR _f$[ebp], eax
+; Line 14
+	mov	eax, DWORD PTR _i$[ebp]
+	add	eax, 1
+	mov	DWORD PTR _i$[ebp], eax
+; Line 15
+	jmp	SHORT $LN2@main
+$LN3@main:
+; Line 16
 	mov	esi, esp
 	push	OFFSET ??$endl@DU?$char_traits@D@std@@@std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@0@AAV10@@Z ; std::endl<char,std::char_traits<char> >
 	mov	edi, esp
@@ -139,12 +155,12 @@ _main	PROC						; COMDAT
 	call	DWORD PTR __imp_??6?$basic_ostream@DU?$char_traits@D@std@@@std@@QAEAAV01@P6AAAV01@AAV01@@Z@Z
 	cmp	esi, esp
 	call	__RTC_CheckEsp
-; Line 18
+; Line 17
 	xor	eax, eax
 	push	edx
 	mov	ecx, ebp
 	push	eax
-	lea	edx, DWORD PTR $LN5@main
+	lea	edx, DWORD PTR $LN7@main
 	call	@_RTC_CheckStackVars@8
 	pop	eax
 	pop	edx
@@ -160,15 +176,14 @@ _main	PROC						; COMDAT
 	mov	esp, ebp
 	pop	ebp
 	ret	0
-	npad	1
-$LN5@main:
+$LN7@main:
 	DD	1
-	DD	$LN4@main
-$LN4@main:
+	DD	$LN6@main
+$LN6@main:
 	DD	-24					; ffffffe8H
 	DD	4
-	DD	$LN3@main
-$LN3@main:
+	DD	$LN5@main
+$LN5@main:
 	DB	110					; 0000006eH
 	DB	0
 _main	ENDP
@@ -180,7 +195,7 @@ ___formal$ = 8						; size = 4
 ___formal$ = 12						; size = 4
 ?__empty_global_delete@@YAXPAXI@Z PROC			; __empty_global_delete, COMDAT
 ; File d:\codes\vc++\compilers\homework1\homework1\main.cpp
-; Line 19
+; Line 18
 	push	ebp
 	mov	ebp, esp
 	sub	esp, 192				; 000000c0H
@@ -205,7 +220,7 @@ _TEXT	SEGMENT
 ___formal$ = 8						; size = 4
 ?__empty_global_delete@@YAXPAX@Z PROC			; __empty_global_delete, COMDAT
 ; File d:\codes\vc++\compilers\homework1\homework1\main.cpp
-; Line 19
+; Line 18
 	push	ebp
 	mov	ebp, esp
 	sub	esp, 192				; 000000c0H
