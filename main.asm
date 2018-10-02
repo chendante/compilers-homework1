@@ -99,7 +99,7 @@ _i$ = -12						; size = 4
 __$ArrayPad$ = -4					; size = 4
 _main	PROC						; COMDAT
 ; File d:\codes\vc++\compilers\homework1\homework1\main.cpp
-; Line 5
+; Line 6
 	push	ebp
 	mov	ebp, esp
 	sub	esp, 232				; 000000e8H
@@ -113,7 +113,7 @@ _main	PROC						; COMDAT
 	mov	eax, DWORD PTR ___security_cookie
 	xor	eax, ebp
 	mov	DWORD PTR __$ArrayPad$[ebp], eax
-; Line 8
+; Line 9
 	mov	esi, esp
 	lea	eax, DWORD PTR _n$[ebp]
 	push	eax
@@ -121,27 +121,27 @@ _main	PROC						; COMDAT
 	call	DWORD PTR __imp_??5?$basic_istream@DU?$char_traits@D@std@@@std@@QAEAAV01@AAH@Z
 	cmp	esi, esp
 	call	__RTC_CheckEsp
-; Line 9
-	mov	DWORD PTR _i$[ebp], 2
 ; Line 10
+	mov	DWORD PTR _i$[ebp], 2
+; Line 11
 	mov	DWORD PTR _f$[ebp], 1
 $LN2@main:
-; Line 11
+; Line 12
 	mov	eax, DWORD PTR _i$[ebp]
 	cmp	eax, DWORD PTR _n$[ebp]
 	jg	SHORT $LN3@main
-; Line 13
+; Line 14
 	mov	eax, DWORD PTR _f$[ebp]
 	imul	eax, DWORD PTR _i$[ebp]
 	mov	DWORD PTR _f$[ebp], eax
-; Line 14
+; Line 15
 	mov	eax, DWORD PTR _i$[ebp]
 	add	eax, 1
 	mov	DWORD PTR _i$[ebp], eax
-; Line 15
+; Line 16
 	jmp	SHORT $LN2@main
 $LN3@main:
-; Line 16
+; Line 17
 	mov	esi, esp
 	push	OFFSET ??$endl@DU?$char_traits@D@std@@@std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@0@AAV10@@Z ; std::endl<char,std::char_traits<char> >
 	mov	edi, esp
@@ -155,7 +155,7 @@ $LN3@main:
 	call	DWORD PTR __imp_??6?$basic_ostream@DU?$char_traits@D@std@@@std@@QAEAAV01@P6AAAV01@AAV01@@Z@Z
 	cmp	esi, esp
 	call	__RTC_CheckEsp
-; Line 17
+; Line 18
 	xor	eax, eax
 	push	edx
 	mov	ecx, ebp
@@ -195,7 +195,7 @@ ___formal$ = 8						; size = 4
 ___formal$ = 12						; size = 4
 ?__empty_global_delete@@YAXPAXI@Z PROC			; __empty_global_delete, COMDAT
 ; File d:\codes\vc++\compilers\homework1\homework1\main.cpp
-; Line 18
+; Line 19
 	push	ebp
 	mov	ebp, esp
 	sub	esp, 192				; 000000c0H
@@ -220,7 +220,7 @@ _TEXT	SEGMENT
 ___formal$ = 8						; size = 4
 ?__empty_global_delete@@YAXPAX@Z PROC			; __empty_global_delete, COMDAT
 ; File d:\codes\vc++\compilers\homework1\homework1\main.cpp
-; Line 18
+; Line 19
 	push	ebp
 	mov	ebp, esp
 	sub	esp, 192				; 000000c0H
